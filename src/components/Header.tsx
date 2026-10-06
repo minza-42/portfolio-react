@@ -1,10 +1,11 @@
+import type { Dispatch, SetStateAction } from 'react'
 import translations from '../data/translations'
 
 type Language = keyof typeof translations
 
 type HeaderProps = {
   language: Language
-  setLanguage: React.Dispatch<React.SetStateAction<Language>>
+  setLanguage: Dispatch<SetStateAction<Language>>
   translations: typeof translations.en
 }
 
