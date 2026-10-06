@@ -1,0 +1,24 @@
+@media (max-width: 768px) {
+  #root {
+    padding: 0 1.2rem;
+  }
+
+  .navigation {
+    gap: 1rem;
+
+    a {
+      font-size: 0.75rem;
+    }
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 5rem 0;
+    gap: 3rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+}

@@ -1,0 +1,107 @@
+@use 'variables' as *;
+
+.hero {
+  min-height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* Left side */
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+
+  span {
+    color: $text-secondary;
+  }
+}
+
+.hero-role {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.hero-description {
+  max-width: 500px;
+  margin-top: 1rem;
+  color: $text-muted;
+  line-height: 1.7;
+}
+
+/* Buttons */
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  a {
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid $border-light;
+    border-radius: 8px;
+    color: $text-primary;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: $text-primary;
+      color: $background;
+    }
+  }
+}
+
+/* =========================
+   CODE WINDOW
+========================= */
+
+.hero-code {
+  padding: 1.5rem;
+  border: 1px solid $border;
+  border-radius: 16px;
+  background: $surface;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.code-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+
+  span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  /* Close */
+  span:nth-child(1) {
+    background: $mac-red;
+  }
+
+  /* Minimize */
+  span:nth-child(2) {
+    background: $mac-yellow;
+  }
+
+  /* Maximize */
+  span:nth-child(3) {
+    background: $mac-green;
+  }
+}
+
+.hero-code pre {
+  margin: 0;
+  overflow-x: auto;
+  color: #d0d0d0;
+  font-family: monospace;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}

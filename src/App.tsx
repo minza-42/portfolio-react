@@ -1,0 +1,28 @@
+import { useState } from 'react'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import translations from './data/translations'
+
+type Language = 'en' | 'sv'
+
+function App() {
+  const [language, setLanguage] = useState<Language>('en')
+
+  const t = translations[language]
+
+  return (
+    <>
+      <Header
+        language={language}
+        setLanguage={setLanguage}
+        translations={t}
+      />
+
+      <main>
+        <Hero translations={t} />
+      </main>
+    </>
+  )
+}
+
+export default App
