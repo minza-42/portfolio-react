@@ -20,7 +20,11 @@ function App() {
       />
 
       <main>
-        <Hero translations={t} />
+        <Hero
+          translations={t}
+          language={language}
+        />
+
         <Projects language={language} />
       </main>
     </>

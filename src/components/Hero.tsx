@@ -1,18 +1,27 @@
 import translations from '../data/translations'
 
+import cvEnglish from '../assets/cv/Minai-Karlsson-CV-EN.pdf'
+import cvSwedish from '../assets/cv/Minai-Karlsson-CV-SV.pdf'
+
+
 type HeroProps = {
   translations: typeof translations.en
+  language: 'en' | 'sv'
 }
 
-function Hero({ translations }: HeroProps) {
+function Hero({ translations, language }: HeroProps) {
+  const cv = language === 'en' ? cvEnglish : cvSwedish
+
   return (
     <section className="hero" id="home">
       <div className="hero-content">
         <h1>
           {translations.hero.titleGreeting}
           <br />
-          {translations.hero.titleIntro}{' '}
-          <span>{translations.hero.name}</span>
+          <span>
+            {translations.hero.titleIntro}{' '}
+            {translations.hero.name}
+          </span>
         </h1>
 
         <p className="hero-role">
@@ -24,8 +33,11 @@ function Hero({ translations }: HeroProps) {
         </p>
 
         <div className="hero-buttons">
-          <a href="#projects">
-            {translations.hero.viewWork}
+          <a
+            href={cv}
+            download
+          >
+            {translations.hero.downloadCV}
           </a>
 
           <a href="#contact">
