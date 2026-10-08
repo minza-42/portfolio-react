@@ -1,0 +1,107 @@
+@use 'variables' as *;
+
+.projects {
+  padding: 8rem 0;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 4rem;
+}
+
+.section-label {
+  margin: 0 0 1rem;
+  color: $text-secondary;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.section-heading > p:last-child {
+  margin-top: 1.5rem;
+  color: $text-muted;
+  line-height: 1.7;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.project-card {
+  overflow: hidden;
+  border: 1px solid $border;
+  border-radius: 16px;
+  background: $surface;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: $border-light;
+  }
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: -0.03em;
+}
+
+.project-content p {
+  margin: 0.8rem 0 1.5rem;
+  color: $text-muted;
+  line-height: 1.6;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tag {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid $border;
+  border-radius: 999px;
+  color: $text-secondary;
+  font-size: 0.75rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  a {
+    color: $text-primary;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
