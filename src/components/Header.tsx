@@ -1,45 +1,78 @@
-import type { Dispatch, SetStateAction } from 'react'
-import translations from '../data/translations'
-
-type Language = keyof typeof translations
+import { useState, type Dispatch, type SetStateAction } from "react";
+import translations from "../data/translations";
 
 type HeaderProps = {
-  language: Language
-  setLanguage: Dispatch<SetStateAction<Language>>
-  translations: typeof translations.en
-}
+  language: "en" | "sv";
+  setLanguage: Dispatch<SetStateAction<"en" | "sv">>;
+  translations: typeof translations.en;
+};
 
-function Header({
-  language,
-  setLanguage,
-  translations,
-}: HeaderProps) {
-  const handleLanguageChange = () => {
-    setLanguage(language === 'en' ? 'sv' : 'en')
-  }
+function Header({ language, setLanguage, translations }: HeaderProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen((current) => !current);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const toggleLanguage = () => {
+    setLanguage((currentLanguage) => (currentLanguage === "en" ? "sv" : "en"));
+  };
 
   return (
     <header className="header">
-      <a href="#home" className="logo">
+      <a href="#home" className="logo" onClick={closeMenu}>
         MK
       </a>
 
-      <nav className="navigation">
-        <a href="#home">{translations.navigation.home}</a>
-        <a href="#about">{translations.navigation.about}</a>
-        <a href="#projects">{translations.navigation.projects}</a>
-        <a href="#skills">{translations.navigation.skills}</a>
-        <a href="#contact">{translations.navigation.contact}</a>
+      <nav className={`navigation ${menuOpen ? "open" : ""}`}>
+        <a href="#home" onClick={closeMenu}>
+          {translations.navigation.home}
+        </a>
+
+        <a href="#about" onClick={closeMenu}>
+          {translations.navigation.about}
+        </a>
+
+        <a href="#skills" onClick={closeMenu}>
+          {translations.navigation.skills}
+        </a>
+
+        <a href="#projects" onClick={closeMenu}>
+          {translations.navigation.projects}
+        </a>
+
+        <a href="#contact" onClick={closeMenu}>
+          {translations.navigation.contact}
+        </a>
+      </nav>
+
+      <div className="header-actions">
+        <button
+          type="button"
+          className="language-toggle"
+          onClick={toggleLanguage}
+        >
+          {language === "en" ? "SV" : "EN"}
+        </button>
 
         <button
-          className="language-button"
-          onClick={handleLanguageChange}
+          type="button"
+          className={`menu-toggle ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
         >
-          {language === 'en' ? 'SV' : 'EN'}
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-      </nav>
+      </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

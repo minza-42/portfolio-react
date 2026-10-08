@@ -1,15 +1,80 @@
+@use 'variables' as *;
+
 @media (max-width: 768px) {
+  // Root
+
   #root {
     padding: 0 1.2rem;
   }
 
+  // Header
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
   .navigation {
-    gap: 1rem;
+    display: none;
+    flex-direction: column;
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    gap: 0;
+
+    width: 100%;
+    padding: 1rem 0 0;
+
+    &.open {
+      display: flex;
+    }
 
     a {
-      font-size: 0.75rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid $border;
+      font-size: 0.85rem;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
+
+  .menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+
+  border: 1px solid $border;
+  border-radius: 8px;
+
+  background: transparent;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    margin: 0 auto;
+    background: $text-primary;
+  }
+}
+  // Hero
 
   .hero {
     grid-template-columns: 1fr;
@@ -21,6 +86,8 @@
   .hero h1 {
     font-size: clamp(3rem, 14vw, 5rem);
   }
+
+  // About
 
   .about {
     padding: 5rem 0;
@@ -47,6 +114,8 @@
   .about-detail {
     padding: 1.25rem;
   }
+
+  // Projects
 
   .projects {
     padding-top: 2rem;
