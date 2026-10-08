@@ -22,11 +22,12 @@ function ProjectCard({ project, language }: ProjectCardProps) {
         <div className="project-tags">
           {project.tags.map((tag) => (
             <span
-              key={tag}
-              className="project-tag"
-            >
-              {tag}
-            </span>
+            key={tag}
+            className="project-tag"
+            data-tag={tag}
+          >
+            {tag}
+          </span>
           ))}
         </div>
 

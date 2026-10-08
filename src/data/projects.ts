@@ -35,8 +35,9 @@ const projects: Project[] = [
       sv: 'Designade och utvecklade en anpassad affärswebbplats med fokus på responsiv design, förbättrad struktur och modern UX. Deployment via FileZilla.',
     },
     image: anoterosImage,
-    tags: ['PHP', 'HTML', 'CSS'],
+    tags: ['HTML', 'CSS', 'PHP'],
     github: 'https://github.com/minza-42',
+    live: 'https://www.anoteros.eu/',
   },
   
   {
@@ -52,6 +53,7 @@ const projects: Project[] = [
     image: arossnickeriImage,
     tags: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/minza-42',
+    live: 'https://www.arossnickeri.se/',
   },
   
   {
@@ -67,6 +69,7 @@ const projects: Project[] = [
     image: juniperImage,
     tags: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/minza-42',
+    live: 'https://medieinstitutet.github.io/fed25d-grafiska-verktyg-vector-graphics',
   },
 
   {
@@ -82,6 +85,7 @@ const projects: Project[] = [
     image: templeImage,
     tags: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/minza-42',
+    live: 'https://medieinstitutet.github.io/fed25d-js-intro-grupparbete-the-pogo-stick-pioneers',
   },
   
   {
@@ -95,8 +99,9 @@ const projects: Project[] = [
       sv: 'Modern budgeteringsapp för att spåra inkomster, utgifter och sparande i realtid. Inkluderar datavisualisering, PDF-export och mörk/light mode.',
     },
     image: budgetImage,
-    tags: ['JavaScript', 'HTML', 'CSS'],
+    tags: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/minza-42',
+    live: 'https://medieinstitutet.github.io/fed25d-js-inl-2-budget-app-minza-42/'
   },
   
   {
@@ -110,8 +115,9 @@ const projects: Project[] = [
       sv: 'E-handelsapp för sushi med dynamisk varukorgshantering, filtrering och formulärvalidering. Smarta prissystem, rabattlogik och mörk/light mode.',
     },
     image: sushiImage,
-    tags: ['JavaScript', 'HTML', 'CSS'],
+    tags: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/minza-42',
+    live: 'https://medieinstitutet.github.io/fed25d-js-intro-inl-1-minza-42/',
   },
 
   {
