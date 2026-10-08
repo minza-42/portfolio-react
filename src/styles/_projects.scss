@@ -39,6 +39,8 @@
 
 .project-card {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   border: 1px solid $border;
   border-radius: 16px;
   background: $surface;
@@ -60,9 +62,10 @@
 }
 
 .project-content {
-  padding: 1.5rem;
   display: flex;
+  flex: 1;
   flex-direction: column;
+  padding: 1.5rem;
 }
 
 .project-content h3 {
@@ -72,11 +75,12 @@
 }
 
 .project-content p {
+  min-height: 5.1rem;
   margin: 0.8rem 0 1.5rem;
   color: $text-muted;
   line-height: 1.6;
-  min-height: 5.1rem;
 }
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -90,7 +94,7 @@
   color: $text-secondary;
   font-size: 0.75rem;
 
-   &[data-tag='JavaScript'] {
+  &[data-tag='JavaScript'] {
     color: #faea76;
     border-color: rgba(247, 223, 30, 0.4);
     background: rgba(247, 223, 30, 0.08);
@@ -121,12 +125,97 @@
   }
 
   &[data-tag='PHP'] {
-  color: #a78bfa;
-  border-color: rgba(167, 139, 250, 0.4);
-  background: rgba(167, 139, 250, 0.08);
-}
+    color: #a78bfa;
+    border-color: rgba(167, 139, 250, 0.4);
+    background: rgba(167, 139, 250, 0.08);
+  }
 }
 
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+
+  button {
+    padding: 0.6rem 1rem;
+    border: 1px solid $border;
+    border-radius: 999px;
+    background: transparent;
+    color: $text-secondary;
+    font-family: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    // JavaScript
+    &[data-tag='JavaScript']:hover,
+    &[data-tag='JavaScript'].active {
+      color: #faea76;
+      border-color: rgba(247, 223, 30, 0.4);
+      background: rgba(247, 223, 30, 0.08);
+    }
+
+    // HTML
+    &[data-tag='HTML']:hover,
+    &[data-tag='HTML'].active {
+      color: #e34f26;
+      border-color: rgba(227, 79, 38, 0.4);
+      background: rgba(227, 79, 38, 0.08);
+    }
+
+    // CSS
+    &[data-tag='CSS']:hover,
+    &[data-tag='CSS'].active {
+      color: #1572b6;
+      border-color: rgba(21, 114, 182, 0.4);
+      background: rgba(21, 114, 182, 0.08);
+    }
+
+    // PHP
+    &[data-tag='PHP']:hover,
+    &[data-tag='PHP'].active {
+      color: #a78bfa;
+      border-color: rgba(167, 139, 250, 0.4);
+      background: rgba(167, 139, 250, 0.08);
+    }
+
+    // TypeScript
+    &[data-tag='TypeScript']:hover,
+    &[data-tag='TypeScript'].active {
+      color: #80b8f3;
+      border-color: rgba(49, 120, 198, 0.4);
+      background: rgba(49, 120, 198, 0.08);
+    }
+
+    // React
+    &[data-tag='React']:hover,
+    &[data-tag='React'].active {
+      color: #bbe0eb;
+      border-color: rgba(97, 218, 251, 0.4);
+      background: rgba(97, 218, 251, 0.08);
+    }
+  }
+
+  .clear-filter {
+    color: $text-muted;
+
+    &:hover {
+      color: $text-primary;
+      border-color: $border-light;
+      background: transparent;
+    }
+  }
+}
 .project-links {
   display: flex;
   gap: 0.75rem;
