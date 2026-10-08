@@ -1,0 +1,46 @@
+@use 'variables' as *;
+
+.skills {
+  padding: 4rem 0;
+}
+
+.skills-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.skill-group h3 {
+  margin: 0 0 0.75rem;
+  color: $text-primary;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid $border;
+  border-radius: 6px;
+  background: $surface;
+  color: $text-secondary;
+  font-size: 0.8rem;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    border-color: $border-light;
+    color: $text-primary;
+    transform: translateY(-2px);
+  }
+}

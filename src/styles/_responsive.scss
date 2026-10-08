@@ -137,3 +137,12 @@
     min-height: auto;
   }
 }
+
+// Skills
+.skills {
+  padding: 4rem 0;
+}
+
+.skills-grid {
+  grid-template-columns: 1fr 1fr;
+}

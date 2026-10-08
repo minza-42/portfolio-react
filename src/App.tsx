@@ -1,37 +1,33 @@
-import { useState } from 'react'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
-import translations from './data/translations'
+import { useState } from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import translations from "./data/translations";
 
-type Language = 'en' | 'sv'
+type Language = "en" | "sv";
 
 function App() {
-  const [language, setLanguage] = useState<Language>('en')
+  const [language, setLanguage] = useState<Language>("en");
 
-  const t = translations[language]
+  const t = translations[language];
 
   return (
     <>
-      <Header
-        language={language}
-        setLanguage={setLanguage}
-        translations={t}
-      />
+      <Header language={language} setLanguage={setLanguage} translations={t} />
 
       <main>
-        <Hero
-          translations={t}
-          language={language}
-        />
+        <Hero translations={t} language={language} />
 
-          <About language={language} />
+        <About language={language} />
+
+        <Skills language={language} />
 
         <Projects language={language} />
       </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
