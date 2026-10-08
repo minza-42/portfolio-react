@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import About from './components/About'
 import Projects from './components/Projects'
 import translations from './data/translations'
 
@@ -24,6 +25,8 @@ function App() {
           translations={t}
           language={language}
         />
+
+          <About language={language} />
 
         <Projects language={language} />
       </main>
