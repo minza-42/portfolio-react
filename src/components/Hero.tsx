@@ -1,16 +1,15 @@
-import translations from '../data/translations'
+import translations from "../data/translations";
 
-import cvEnglish from '../assets/cv/Minai-Karlsson-CV-EN.pdf'
-import cvSwedish from '../assets/cv/Minai-Karlsson-CV-SV.pdf'
-
+import cvEnglish from "../assets/cv/Minai-Karlsson-CV-EN.pdf";
+import cvSwedish from "../assets/cv/Minai-Karlsson-CV-SV.pdf";
 
 type HeroProps = {
-  translations: typeof translations.en
-  language: 'en' | 'sv'
-}
+  translations: typeof translations.en;
+  language: "en" | "sv";
+};
 
 function Hero({ translations, language }: HeroProps) {
-  const cv = language === 'en' ? cvEnglish : cvSwedish
+  const cv = language === "en" ? cvEnglish : cvSwedish;
 
   return (
     <section className="hero" id="home">
@@ -19,30 +18,20 @@ function Hero({ translations, language }: HeroProps) {
           {translations.hero.titleGreeting}
           <br />
           <span>
-            {translations.hero.titleIntro}{' '}
-            {translations.hero.name}
+            {translations.hero.titleIntro} {translations.hero.name}
           </span>
         </h1>
 
-        <p className="hero-role">
-          {translations.hero.role}
-        </p>
+        <p className="hero-role">{translations.hero.role}</p>
 
-        <p className="hero-description">
-          {translations.hero.description}
-        </p>
+        <p className="hero-description">{translations.hero.description}</p>
 
         <div className="hero-buttons">
-          <a
-            href={cv}
-            download
-          >
+          <a href={cv} download>
             {translations.hero.downloadCV}
           </a>
 
-          <a href="#contact">
-            {translations.hero.contact}
-          </a>
+          <a href="#contact">{translations.hero.contact}</a>
         </div>
       </div>
 
@@ -54,21 +43,21 @@ function Hero({ translations, language }: HeroProps) {
         </div>
 
         <pre>
-{`const developer = {
-  name: "Minai",
-  role: "Frontend Developer",
-  skills: [
-    "HTML",
-    "CSS / SCSS",
-    "JavaScript",
-    "React",
-    "TypeScript"
-  ]
-}`}
+          {`const developer = {
+          name: "Minai",
+          role: "Frontend Developer",
+          skills: [
+          "HTML",
+          "CSS / SCSS",
+          "JavaScript",
+          "TypeScript",
+          "React"
+        ]
+      }`}
         </pre>
       </div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

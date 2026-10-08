@@ -146,3 +146,17 @@
 .skills-grid {
   grid-template-columns: 1fr 1fr;
 }
+
+// Contact
+.contact {
+  padding: 4rem 0;
+}
+
+.contact-form {
+  max-width: 100%;
+}
+
+.form-field input,
+.form-field textarea {
+  font-size: 16px;
+}
