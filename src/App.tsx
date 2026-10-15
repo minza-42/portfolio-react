@@ -5,6 +5,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import translations from "./data/translations";
 
 type Language = "en" | "sv";
@@ -29,6 +30,8 @@ function App() {
 
         <Contact language={language} />
       </main>
+
+      <Footer translations={t} />
     </>
   );
 }
