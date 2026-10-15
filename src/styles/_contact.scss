@@ -1,12 +1,104 @@
 @use 'variables' as *;
 
-.contact {
-  padding: 4rem 0;
+// Contact layout
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 3rem;
+  margin-top: 3rem;
 }
 
+.contact-info,
+.contact-form-wrapper {
+  min-width: 0;
+}
+
+// Contact information
+
+.contact-info h3 {
+  margin: 0 0 1rem;
+  color: $text-primary;
+  font-size: 1.25rem;
+}
+
+.contact-info > p {
+  max-width: 380px;
+  color: $text-secondary;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+// Contact links and icons
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: $text-primary;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: transform 0.2s ease;
+}
+
+.contact-links a:hover {
+  transform: translateX(4px);
+}
+
+.contact-links a > img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.contact-links a > span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.contact-links a > span > span:first-child {
+  color: $text-primary;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact-links a > span > span:last-child {
+  color: $text-secondary;
+  font-size: 0.8rem;
+  transition: color 0.2s ease;
+}
+
+.contact-links a:hover > span > span:last-child {
+  color: $text-primary;
+}
+
+// Contact form
+
 .contact-form {
-  max-width: 700px;
-  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: none;
+  margin-top: 0;
+}
+
+.contact-form-wrapper .contact-form {
+  width: 100%;
+  max-width: none;
+  margin-top: 0;
 }
 
 .form-field {
@@ -22,8 +114,11 @@
   font-weight: 600;
 }
 
+// Form inputs and textarea
+
 .form-field input,
 .form-field textarea {
+  box-sizing: border-box;
   width: 100%;
   padding: 0.9rem 1rem;
   border: 1px solid $border;
@@ -33,9 +128,7 @@
   color: $text-primary;
   font-family: inherit;
   font-size: 0.9rem;
-  transition:
-    border-color 0.2s ease,
-    background 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .form-field input::placeholder,
@@ -54,6 +147,8 @@
   resize: vertical;
 }
 
+// Form validation and status
+
 .form-field input[aria-invalid='true'],
 .form-field textarea[aria-invalid='true'] {
   border-color: #8f3f3f;
@@ -65,7 +160,16 @@
   font-size: 0.75rem;
 }
 
+.form-success {
+  margin-top: 1.25rem;
+  color: #8fd19e;
+  font-size: 0.85rem;
+}
+
+// Submit button
+
 .contact-submit {
+  align-self: flex-start;
   margin-top: 0.5rem;
   padding: 0.8rem 1.2rem;
   border: 1px solid $border-light;
@@ -76,19 +180,13 @@
   font-size: 0.9rem;
   cursor: pointer;
   transition:
+    border-color 0.2s ease,
     background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
-
-  &:hover {
-    background: $text-primary;
-    color: $background;
-    border-color: $text-primary;
-  }
+    color 0.2s ease;
 }
 
-.form-success {
-  margin-top: 1.25rem;
-  color: #8fd19e;
-  font-size: 0.85rem;
+.contact-submit:hover {
+  border-color: $text-primary;
+  background: $text-primary;
+  color: $background;
 }

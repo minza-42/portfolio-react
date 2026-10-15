@@ -136,9 +136,8 @@
   .project-content p {
     min-height: auto;
   }
-}
-
-// Skills
+  
+  // Skills
 .skills {
   padding: 4rem 0;
 }
@@ -156,7 +155,18 @@
   max-width: 100%;
 }
 
+.contact-layout {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.contact-links {
+  margin-top: 1.5rem;
+}
+
 .form-field input,
 .form-field textarea {
   font-size: 16px;
 }
+}
+
