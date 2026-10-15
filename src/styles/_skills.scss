@@ -1,7 +1,10 @@
 @use 'variables' as *;
 
 .skills {
-  padding: 4rem 0;
+  @include gradient-divider;
+
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .skills-groups {

@@ -1,7 +1,10 @@
 @use 'variables' as *;
 
 .projects {
-  padding: 8rem 0;
+  @include gradient-divider;
+
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .section-heading {
@@ -247,3 +250,4 @@
     }
   }
 }
+
